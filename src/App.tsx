@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './Components/Home';
+import About from './Components/About';
+import MyCart from './Components/MyCart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='app'>
+          <Navbar bg="dark" variant="dark" sticky="top">
+            <Container className=''>
+            <Navbar.Brand>diet recipes</Navbar.Brand>
+            <Nav className="d-flex flex-row" style={{direction:'rtl'}}>
+              <Nav.Item>
+              <Link to='/' className='text-white mx-2 text-decoration-none'>דף הבית</Link>
+              </Nav.Item>
+              <Nav.Item>
+              <Link to='/About' className='text-white mx-2 text-decoration-none'>עלינו</Link>
+              </Nav.Item>
+              <Nav.Item>
+              <Link to='/MyCart' className='text-white mx-2 text-decoration-none'>העגלה שלי</Link>
+              </Nav.Item>
+            </Nav>
+            </Container>
+          </Navbar>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/About' element={<About/>}/>
+            <Route path='/MyCart' element={<MyCart/>}/>
+          </Routes>
+      </div>
+
+    </BrowserRouter>
   );
 }
 
