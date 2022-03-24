@@ -23,7 +23,10 @@ const Search = (props:{dbArr:FastFood[],setMenusArr:any}) =>{
         }
     }
   return (
-        <Form  className="col-8 mx-auto ">
+    <div className="container col-6" style={{direction:"rtl"}}>
+        <h2 className="text-center">חיפוש תפריט בהתאמה אישית</h2>
+        <h6 className="text-danger text-center">(לפי 100 גרם)</h6>
+        <Form  className="mx-auto">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>פחמימות:</Form.Label>
                 <div className='d-flex'>
@@ -51,6 +54,7 @@ const Search = (props:{dbArr:FastFood[],setMenusArr:any}) =>{
                 </Button>
             </div>
         </Form>
+    </div>
   )
 }
 
