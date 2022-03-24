@@ -14,7 +14,7 @@ const currentCart = new Cart();
         initVal.carbohydrates! += item.carbohydrates;
         initVal.proteins! += item.proteins;
         initVal.fats! += item.fats;
-        initVal.totalCalories! + item.totalCalories;
+        initVal.totalCalories! += item.totalCalories;
         return initVal;
       }, {});
   }
