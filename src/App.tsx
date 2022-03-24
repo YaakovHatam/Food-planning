@@ -2,7 +2,7 @@
 import './App.css';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './Components/Home';
 import About from './Components/About';
 import MyCart from './Components/MyCart';
