@@ -94,12 +94,12 @@ export const api = {
     ),
   getLevenshteinDistance: async (search: string) => {
     const closest = items
-      .map((b) => {
-        return { name: b.name, steps: levenshteinDistance(search, b.name) };
+      .map((s) => {
+        return { name: s.name, steps: levenshteinDistance(search, s.name) };
       })
       .reduce(function (prev, curr) {
         return prev.steps < curr.steps ? prev : curr;
       });
-    return items.find((i) => closest.name);
+    return items.find((i) => i.name == closest.name);
   },
 };
