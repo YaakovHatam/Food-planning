@@ -3,12 +3,11 @@ import { AiOutlineReload} from "react-icons/ai";
 import { useEffect, useState } from "react"
 import CardHeader from "react-bootstrap/esm/CardHeader";
 import { api } from "../services/db.service";
-import { FastFood, Food } from "../Interfaces/Fast.Food.Interface";
 
 const RandomFoodCard = () => {
 
     const [randomRecipe,setRandomRecipe]= useState<any>({});
-    useEffect(()=>{api.getAllFoods('shsj').then(res =>setRandomRecipe(res[0]))},[]);
+    useEffect(()=>{api.getAllFoods('BaseURL/Recipes').then(res =>setRandomRecipe(res[0]))},[]);
 
     // missing logic function 
     const RefrashRandomRecipe = () => setRandomRecipe(randomRecipe);
