@@ -92,7 +92,7 @@ export const api = {
         m.proteins < values.protMax &&
         m.proteins > values.protMin
     ),
-  getLevenshteinDistance: async (search: string) {
+  getLevenshteinDistance: async (search: string) => {
     const closest = items
       .map((b) => {
         return { name: b.name, steps: levenshteinDistance(search, b.name) };
