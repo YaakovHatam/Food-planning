@@ -1,5 +1,6 @@
 # diet-recipes
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f80ac04873be4d9ca757ecb72fa2c217)](https://app.codacy.com/gh/YaakovHatam/diet-recipes?utm_source=github.com&utm_medium=referral&utm_content=YaakovHatam/diet-recipes&utm_campaign=Badge_Grade_Settings)
 [![CodeQL](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml/badge.svg)](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml)
 
 - `git pull` - get latest version
