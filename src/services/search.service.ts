@@ -21,13 +21,5 @@ const levenshteinDistance = (s: string, t:string):number => {
   return arr[t.length][s.length];
 };
 
-const getLevenshteindistance = (search:string,items:Food[]) => {
-  const closest = items.map((b) => {
-      return { name: b.name, steps: levenshteinDistance("duck", b.name) };
-    }).reduce(function (prev, curr) {
-      return prev.steps < curr.steps ? prev : curr;
-    });
-    return items.find(i=>closest.name)
-}
 
 export default levenshteinDistance;
