@@ -1,8 +1,8 @@
-import { FastFood } from "../Interfaces/Fast.Food.Interface";
+import { Food } from "../Interfaces/Fast.Food.Interface";
 
 export interface IService {
-    AddItem(food: FastFood): void;
-    getAll(): FastFood[];
+    AddItem(food: Food): void;
+    getAll(): Food[];
     removeItem(id: number): void;
 
 }
