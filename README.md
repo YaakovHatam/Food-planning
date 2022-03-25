@@ -2,6 +2,8 @@
 
 [![CodeQL](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml/badge.svg)](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml)
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e77de2085e644c21a06a5a76ec433b87)](https://www.codacy.com/gh/YaakovHatam/diet-recipes/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YaakovHatam/diet-recipes&amp;utm_campaign=Badge_Grade)
+
 - `git pull` - get latest version
 
 ## Bring food objects - code snippet
