@@ -1,5 +1,7 @@
 # diet-recipes
 
+[![CodeQL](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml/badge.svg)](https://github.com/YaakovHatam/diet-recipes/actions/workflows/codeql.yml)
+
 - `git pull` - get latest version
 
 ## Bring food objects - code snippet
