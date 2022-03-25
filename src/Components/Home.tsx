@@ -1,7 +1,12 @@
 
+import RandomFoodCard from "./RandomFoodCard"
+
 const Home = () => {
+
   return (
-    <div>Home</div>
+    <div>
+      <RandomFoodCard/>
+    </div>
   )
 }
 
