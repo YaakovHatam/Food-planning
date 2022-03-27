@@ -15,7 +15,7 @@ const SearchResults = (props: SearchResultsProps) => {
                 </tr>
             </thead>
             <tbody>
-                {props.foodItems.map(foodItem => <tr>
+                {props.foodItems.map((foodItem,i) => <tr key={i}>
                     <td>{foodItem.name}</td>
                     <td>{foodItem.fats}</td>
                     <td>{foodItem.proteins}</td>
