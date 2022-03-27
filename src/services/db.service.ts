@@ -100,6 +100,8 @@ export const api = {
         return prev.distance < curr.distance ? prev : curr;
       });
     return items.find((i) => i.name == closest.name)!;
-    },
-    searchFoodById: async (id: number) => items.find(i=>i.id==id)!
+  },
+  searchFoodById: async (id: number) => items.find((i) => i.id == id)!,
+  searchByCompany: async (company: string) =>
+    items.filter((i) => i.company === company),
 };
