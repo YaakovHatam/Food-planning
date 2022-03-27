@@ -7,8 +7,7 @@ import { api } from "../services/db.service";
 const SearchResults = (props: SearchResultsProps) => {
   const cart = useContext(MyCartContext);
   const handleClick = (id: number) => {
-      api.searchFoodById(id).then((res) => cart.AddItem(res));
-      
+    api.searchFoodById(id).then((res) => cart.AddItem(res));
   };
   return (
     <Table striped bordered hover>
