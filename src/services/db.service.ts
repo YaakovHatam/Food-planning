@@ -93,12 +93,11 @@ export const api = {
     ),
   searchFoodTextual: async (search: string) => {
     const closest = items
-      .map((s) => {
-        return { name: s.name, distance: levenshteinDistance(search, s.name) };
-      })
-      .reduce(function (prev, curr) {
-        return prev.distance < curr.distance ? prev : curr;
-      });
+      .map((s) => ({
+        name: s.name,
+        distance: levenshteinDistance(search, s.name),
+      }))
+      .reduce((prev, curr) => (prev.distance < curr.distance ? prev : curr));
     return items.find((i) => i.name == closest.name)!;
   },
   searchFoodById: async (id: number) => items.find((i) => i.id == id)!,
