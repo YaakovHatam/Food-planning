@@ -102,4 +102,11 @@ export const api = {
       });
     return items.find((i) => i.name == closest.name);
   },
+
+  getRandomFood: async () => {
+    var randomNumber = Math.floor(Math.random() * items.length) + 1;
+    return items[randomNumber];
+  }
+
 };
+
