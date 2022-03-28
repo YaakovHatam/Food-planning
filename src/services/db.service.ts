@@ -102,9 +102,9 @@ export const api = {
   },
 
   getRandomFood: async () => {
-    var randomNumber = Math.floor(Math.random() * items.length) + 1;
+    var randomNumber = Math.floor(Math.random() * items.length);
     return items[randomNumber];
-  }
+  },
 
   searchFoodById: async (id: number) => items.find((i) => i.id == id)!,
   searchByCompany: async (company: string) =>

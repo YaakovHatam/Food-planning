@@ -5,14 +5,13 @@ import CardHeader from "react-bootstrap/esm/CardHeader";
 import { api } from "../services/db.service";
 
 const RandomFoodCard = () => {
-
     const [randomRecipe,setRandomRecipe]= useState<any>({});
-    useEffect(()=>{api.getAllFoods('BaseURL/Recipes').then(res =>setRandomRecipe(res[0]))},[]);
-
-    // missing logic function 
-    const RefrashRandomRecipe = () => setRandomRecipe(randomRecipe);
+    useEffect(()=> {refrashRandomRecipe()},[]);
+    const refrashRandomRecipe = () => {
+        api.getRandomFood().then(res => setRandomRecipe(res))
+    };
   return (
-        <Card style={{direction:'rtl',width: '18rem'}}>
+        <Card className="mt-2" style={{direction:'rtl',width: '18rem'}}>
             <CardHeader>מוצר אקראי</CardHeader>
         <Card.Body>
             <Card.Title className="text-center">{randomRecipe.name}</Card.Title>
@@ -29,8 +28,8 @@ const RandomFoodCard = () => {
                     סה"כ קלוריות: {randomRecipe.totalCalories}
                 </ListGroupItem>
             </ListGroup>
-            <div className="text-start mt-2">
-                <Button variant="primary"onClick={()=>RefrashRandomRecipe()}>
+            <div className="text-center mt-2">
+                <Button variant="primary"onClick={()=>refrashRandomRecipe()}>
                     <AiOutlineReload/>
                 </Button>
             </div>
