@@ -4,7 +4,7 @@ import RandomFoodCard from "./RandomFoodCard"
 const Home = () => {
 
   return (
-    <div>
+    <div style={{direction:'rtl'}}>
       <RandomFoodCard/>
     </div>
   )
