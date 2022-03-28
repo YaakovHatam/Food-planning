@@ -1,31 +1,44 @@
-import { Table } from "react-bootstrap"
-import { SearchResultsProps } from "../Interfaces/components-interfaces/SearchResults.props"
+import { useContext } from "react";
+import { Button, Table } from "react-bootstrap";
+import { MyCartContext } from "../context/Cart-context";
+import { SearchResultsProps } from "../Interfaces/components-interfaces/SearchResults.props";
+import { api } from "../services/db.service";
 
 const SearchResults = (props: SearchResultsProps) => {
-    return (
-        <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>שם</th>
-                    <th>שומנים</th>
-                    <th>חלבונים</th>
-                    <th>פחמימות</th>
-                    <th>סה"כ קלוריות</th>
-                    <th>הוסף לסל</th>
-                </tr>
-            </thead>
-            <tbody>
-                {props.foodItems.map((foodItem,i) => <tr key={i}>
-                    <td>{foodItem.name}</td>
-                    <td>{foodItem.fats}</td>
-                    <td>{foodItem.proteins}</td>
-                    <td>{foodItem.carbohydrates}</td>
-                    <td>{foodItem.totalCalories}</td>
-                    <td>button - {foodItem.id}</td>
-                </tr>)}
-            </tbody>
-        </Table >
-    )
-}
+  const cart = useContext(MyCartContext);
+  const handleClick = (id: number) => {
+    api.searchFoodById(id).then((res) => cart.AddItem(res));
+  };
+  return (
+    <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>שם</th>
+          <th>שומנים</th>
+          <th>חלבונים</th>
+          <th>פחמימות</th>
+          <th>סה"כ קלוריות</th>
+          <th>הוסף לסל</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.foodItems.map((foodItem, i) => (
+          <tr key={i}>
+            <td>{foodItem.name}</td>
+            <td>{foodItem.fats}</td>
+            <td>{foodItem.proteins}</td>
+            <td>{foodItem.carbohydrates}</td>
+            <td>{foodItem.totalCalories}</td>
+            <td>
+              <Button variant="dark" onClick={() => handleClick(foodItem.id)}>
+                הוסף לסל
+              </Button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  );
+};
 
-export default SearchResults
+export default SearchResults;

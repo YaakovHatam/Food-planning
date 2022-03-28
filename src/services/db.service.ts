@@ -81,7 +81,6 @@ const items: FastFood[] = [
 
 export const api = {
   getAllFoods: async (endpoint: string) => items,
-  searchFoodTextual: async (query: string) => items,
   searchFoodByValues: async (values: SearchValuesModel) =>
     items.filter(
       (m) =>
@@ -92,15 +91,14 @@ export const api = {
         m.proteins < values.protMax &&
         m.proteins > values.protMin
     ),
-  getLevenshteinDistance: async (search: string) => {
+  searchFoodTextual: async (search: string) => {
     const closest = items
-      .map((s) => {
-        return { name: s.name, steps: levenshteinDistance(search, s.name) };
-      })
-      .reduce(function (prev, curr) {
-        return prev.steps < curr.steps ? prev : curr;
-      });
-    return items.find((i) => i.name == closest.name);
+      .map((s) => ({
+        name: s.name,
+        distance: levenshteinDistance(search, s.name),
+      }))
+      .reduce((prev, curr) => (prev.distance < curr.distance ? prev : curr));
+    return items.find((i) => i.name == closest.name)!;
   },
 
   getRandomFood: async () => {
@@ -108,5 +106,8 @@ export const api = {
     return items[randomNumber];
   }
 
+  searchFoodById: async (id: number) => items.find((i) => i.id == id)!,
+  searchByCompany: async (company: string) =>
+    items.filter((i) => i.company === company),
 };
 
