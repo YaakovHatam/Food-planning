@@ -23,9 +23,10 @@ function App() {
                             <Nav.Item>
                                 <Link to='/' className='text-white mx-2 text-decoration-none'>דף הבית</Link>
                             </Nav.Item>
-                            <Nav.Item>
-                                <Link to='/About' className='text-white mx-2 text-decoration-none'>עלינו</Link>
-                            </Nav.Item>
+                            {aboutFeature ?
+                                <Nav.Item>
+                                    <Link to='/About' className='text-white mx-2 text-decoration-none'>עלינו</Link>
+                                </Nav.Item> : null}
                             <Nav.Item>
                                 <Link to='/search' className='text-white mx-2 text-decoration-none'>חיפוש</Link>
                             </Nav.Item>
