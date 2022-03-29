@@ -8,6 +8,7 @@ import About from './Components/About';
 import MyCart from './Components/MyCart';
 import Search from './Components/Search';
 import { MyCartProvider, MyCartValue } from './context/Cart-context';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 function App() {
     return (
@@ -27,7 +28,10 @@ function App() {
                                 <Link to='/search' className='text-white mx-2 text-decoration-none'>חיפוש</Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Link to='/MyCart' className='text-white mx-2 text-decoration-none'>העגלה שלי</Link>
+                                <Link to='/MyCart' className='text-white mx-2 text-decoration-none'>
+                                    {<AiOutlineShoppingCart />}
+                                    העגלה שלי
+                                </Link>
                             </Nav.Item>
                         </Nav>
                     </Container>
