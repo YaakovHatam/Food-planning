@@ -11,6 +11,8 @@ import { MyCartProvider, MyCartValue } from './context/Cart-context';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
 function App() {
+    const aboutFeature = process.env.REACT_APP_ABOUT_FEATURE_ENABLED;
+
     return (
         <BrowserRouter>
             <div className='app'>
@@ -40,7 +42,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/search' element={<Search />} />
-                        <Route path='/About' element={<About />} />
+                        {aboutFeature ? <Route path='/About' element={<About />} /> : null}
                         <Route path='/MyCart' element={<MyCart />} />
                     </Routes>
                 </MyCartProvider>
