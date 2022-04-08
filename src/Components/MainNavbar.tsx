@@ -13,8 +13,8 @@ export default function MainNavbar() {
 
     store.subscribe(() => setCartLen(store.getState().cart.length));
 
-    return (<Navbar bg="dark" variant="dark" sticky="top">
-        <Container className=''>
+    return (<Navbar bg="dark" variant="dark" sticky="top" className="mb-4">
+        <Container>
             <Navbar.Brand>diet recipes</Navbar.Brand>
             <Nav className="d-flex flex-row" style={{ direction: 'rtl' }}>
                 <Nav.Item>
@@ -28,7 +28,7 @@ export default function MainNavbar() {
                     <Link to='/search' className='text-white mx-2 text-decoration-none'>חיפוש</Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Link to='/MyCart' className='text-white mx-2 text-decoration-none'>
+                    <Link to='/app/MyCart' className='text-white mx-2 text-decoration-none'>
                         {<AiOutlineShoppingCart />}
                         העגלה שלי ({cartLen})
                     </Link>
