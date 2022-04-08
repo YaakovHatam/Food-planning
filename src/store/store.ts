@@ -9,7 +9,9 @@ export interface IStore {
     cart?: CartSlice[];
 }
 export interface UserSettingsSlice {
-    [prop: string]: any;
+    firstName: string;
+    lastName: string;
+    email: string;
 }
 
 export interface CartSlice {
