@@ -6,6 +6,14 @@
 
 - `git pull` - get latest version
 
+## Run the project
+- run the fake server: `npm run fakeserver`
+- run the client app: `npm start`
+
+## Fetch data from web to databas
+- run `npm run crawldata`
+
+
 ## Bring food objects - code snippet
 seach in google: site:foodsdictionary.co.il/Products
 https://www.foodsdictionary.co.il/Products/1/%D7%90%D7%92%D7%A1

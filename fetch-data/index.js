@@ -26,10 +26,7 @@ const puppeteer = require('puppeteer');
         }
     });
 
-
     console.log(name, company, ret)
-
-
 
     await browser.close();
 })();
