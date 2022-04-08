@@ -1,8 +1,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { cartReducers } from './cart.reducers';
 import { userSettingsReducer } from './userSettings.reducers';
+import createSagaMiddleware from 'redux-saga'
 
+import cartSideEffects from './cart.side-effects';
+
+const sagaMiddleware = createSagaMiddleware()
 
 export interface IStore {
     userSettings?: UserSettingsSlice;
@@ -23,4 +27,10 @@ const rootReducer = combineReducers({
     cart: cartReducers
 });
 
-export const store = createStore(rootReducer);
+
+export const store = createStore(
+    rootReducer,
+    applyMiddleware(sagaMiddleware)
+);
+
+sagaMiddleware.run(cartSideEffects)

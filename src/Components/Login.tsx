@@ -21,7 +21,7 @@ export function Login() {
     const onButtonSend = (e: any) => {
         setHasError(false);
 
-        fetch(`http://localhost:3001/users?email=${formInputs.email}`).then(res => res.json()).then(jRes => {
+        fetch(`${"http://localhost:3001"}/users?email=${formInputs.email}`).then(res => res.json()).then(jRes => {
             if (jRes && jRes.length == 1 && jRes[0].password === formInputs.password) {
                 store.dispatch({
                     type: setUserAction,

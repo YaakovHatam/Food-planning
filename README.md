@@ -7,8 +7,9 @@
 - `git pull` - get latest version
 
 ## Run the project
-- run the fake server: `npm run fakeserver`
-- run the client app: `npm start`
+- install the package `json-server` gloablly: `npm i json-server -g`
+- run the fake server in a terminal tab: `npm run fakeserver`
+- run the client app in a terminal tab: `npm start`
 
 ## Fetch data from web to databas
 - run `npm run crawldata`
